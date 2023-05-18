@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/devtools',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@unocss/nuxt',
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
 
   css: [
     '@unocss/reset/tailwind.css',
+    '~/styles/global.css',
   ],
 
   vite: {

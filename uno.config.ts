@@ -21,4 +21,7 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
+  shortcuts: {
+    link: 'hover:text-sky transition',
+  },
 })

@@ -1,18 +1,11 @@
-<script setup lang="ts">
-const countStore = useCountStore()
-const { x, y } = useMouse()
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div bg="white">
-    <i block class="i-ri-github-fill" />
-    <CountPanel :count="countStore.count" />
-    <div @click="countStore.increment">
-      count: {{ countStore.count }}, doubleCount: {{ countStore.doubleCount }}
-    </div>
-    <div>
-      Mouse: x {{ x }}, y {{ y }}
-    </div>
-    <NuxtWelcome />
-  </div>
+  <NuxtLoadingIndicator
+    :height="2"
+    color="repeating-linear-gradient(to right, #6dd5ed, #2193b0)"
+  />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
