@@ -60,3 +60,18 @@ export interface Pagination {
 }
 
 export type FetchStoriesReturn = Pagination & { list: Story[] }
+
+export interface UserRaw {
+  id: string
+  created: UnixTime
+  karma: number
+  about?: HTMLString
+  submitted: number[]
+}
+
+export interface User {
+  name: string
+  created: UnixTime
+  karma: number
+  about?: HTMLString
+}

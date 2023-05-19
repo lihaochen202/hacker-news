@@ -23,7 +23,7 @@ function orderCalculator(index: number) {
 </script>
 
 <template>
-  <div py-4>
+  <div>
     <ul mb-4>
       <li v-for="(item, index) in data!.list" :key="item.id" mb-2.5 last:mb-0>
         <StoryCard v-bind="item" :order="orderCalculator(index)" />

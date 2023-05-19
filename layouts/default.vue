@@ -49,7 +49,7 @@ const appConfig = useAppConfig()
   </header>
 
   <main flex="~ justify-center" p="x-5 lg:x-0 xl:x-0 2xl:x-0">
-    <div w="full lg:250 xl:250 2xl:250">
+    <div py-4 w="full lg:250 xl:250 2xl:250">
       <slot />
     </div>
   </main>
