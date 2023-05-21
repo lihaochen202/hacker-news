@@ -40,7 +40,7 @@ export interface StoryRaw {
   score: number
   title: HTMLString
   parts: number[]
-  descendants: number
+  descendants?: number
 }
 
 export interface Story {

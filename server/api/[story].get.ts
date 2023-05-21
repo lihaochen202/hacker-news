@@ -48,6 +48,6 @@ async function fetchStory(id: number) {
     points: raw.score,
     author: raw.by,
     time: raw.time,
-    comments: raw.descendants,
+    comments: raw.descendants ?? 0,
   } as Story
 }
