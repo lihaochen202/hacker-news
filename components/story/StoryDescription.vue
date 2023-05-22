@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { formatDistanceToNowStrict, fromUnixTime } from 'date-fns'
 import type { Story } from '~/types'
 
-const { url, id, author, time } = defineProps<Story>()
+const { large, url, id, author, time } = defineProps<Story & { large?: boolean }>()
+
+const textSize = computed(() => large ? 'text-sm' : 'text-xs')
 
 const simplifiedURL = computed(() => {
   if (!url)
@@ -16,19 +17,19 @@ const simplifiedURL = computed(() => {
 const internalURL = computed(() => `/story/${id}`)
 const userURL = computed(() => `/user/${author}`)
 
-const formattedTime = computed(() => formatDistanceToNowStrict(fromUnixTime(time)))
+const formattedTime = computed(() => formatStoryTimeDistance(time))
 </script>
 
 <template>
   <div>
-    <h2>
+    <h2 :class="{ 'text-xl': large }">
       <template v-if="url">
         <a :href="url" target="_blank" rel="noopener noreferrer" v-html="title" />
-        <span ml-1 text="xs zinc-500">({{ simplifiedURL }})</span>
+        <span ml-1 text-zinc-500 :class="textSize">({{ simplifiedURL }})</span>
       </template>
       <NuxtLink v-else :to="internalURL" v-html="title" />
     </h2>
-    <p mt-1 text="xs zinc-500">
+    <p :mt="large ? '2' : '1'" text-zinc-500 :class="textSize">
       {{ points }} points by
       <NuxtLink link :to="userURL">
         {{ author }}

@@ -53,6 +53,15 @@ export interface Story {
   comments: number
 }
 
+export type CompleteStory = Story & { children: StoryComment[] }
+
+export interface StoryComment {
+  author: string
+  time: number
+  text: HTMLString
+  chidren: StoryComment[]
+}
+
 export interface Pagination {
   page: number
   size: number

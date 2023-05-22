@@ -1,3 +1,4 @@
+import { formatDistanceToNowStrict, fromUnixTime } from 'date-fns'
 import type { StoryClassMaps } from '~/types'
 
 export const storyClassMaps: StoryClassMaps = {
@@ -6,4 +7,8 @@ export const storyClassMaps: StoryClassMaps = {
   ask: 'askstories',
   show: 'showstories',
   jobs: 'jobstories',
+}
+
+export function formatStoryTimeDistance(time: number) {
+  return formatDistanceToNowStrict(fromUnixTime(time))
 }

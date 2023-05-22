@@ -1,6 +1,7 @@
 import type { QueryObject } from 'ufo'
 import { storyClassMaps } from '../../composables/story'
-import type { Story, StoryClass, StoryRaw } from '../../types'
+import type { StoryClass } from '../../types'
+import { fetchStory } from '../utils'
 
 export default defineEventHandler(async (event) => {
   const story = getRouterParam(event, 'story') as string
@@ -37,17 +38,4 @@ function fetchStoriesID(story: StoryClass) {
 
 function fetchStories(ids: number[]) {
   return Promise.all(ids.map(id => fetchStory(id)))
-}
-
-async function fetchStory(id: number) {
-  const raw = await $fetch<StoryRaw>(`/item/${id}.json`, { baseURL: useAppConfig().apiBaseURL })
-  return {
-    id: raw.id,
-    title: raw.title,
-    url: raw.url,
-    points: raw.score,
-    author: raw.by,
-    time: raw.time,
-    comments: raw.descendants ?? 0,
-  } as Story
 }
