@@ -27,7 +27,9 @@ const formattedTime = computed(() => formatStoryTimeDistance(time))
         <a :href="url" target="_blank" rel="noopener noreferrer" v-html="title" />
         <span ml-1 text-zinc-500 :class="textSize">({{ simplifiedURL }})</span>
       </template>
-      <NuxtLink v-else :to="internalURL" v-html="title" />
+      <NuxtLink v-else :to="internalURL">
+        <span v-html="title" />
+      </NuxtLink>
     </h2>
     <p :mt="large ? '2' : '1'" text-zinc-500 :class="textSize">
       {{ points }} points by
