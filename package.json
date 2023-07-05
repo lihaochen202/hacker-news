@@ -6,6 +6,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
@@ -20,8 +22,18 @@
     "@vueuse/nuxt": "^10.2.1",
     "date-fns": "^2.30.0",
     "eslint": "^8.44.0",
+    "lint-staged": "^13.2.3",
     "nuxt": "^3.6.1",
     "pinia": "^2.1.4",
+    "simple-git-hooks": "^2.8.1",
     "std-env": "^3.3.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --cache --fix"
+    ]
   }
 }
