@@ -12,7 +12,7 @@ export type StoryClass =
   | 'showstories'
   | 'jobstories'
 
-export type StoryClassMaps = Record<StoryClassVisually, StoryClass>
+export type StoryClassMaps = Record<StoryClassVisually | string, StoryClass>
 
 export type StoryType =
   | 'job'
