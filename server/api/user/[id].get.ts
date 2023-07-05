@@ -1,4 +1,4 @@
-import type { User, UserRaw } from '../../../types'
+import type { User, UserRaw } from '~/types'
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id') as string

@@ -1,4 +1,4 @@
-import type { CompleteStory, Story, StoryComment, StoryRaw } from '../../types'
+import type { CompleteStory, Story, StoryComment, StoryRaw } from '~/types'
 
 export async function fetchStory(id: number | string) {
   const raw = await fetchStoryRaw(id)

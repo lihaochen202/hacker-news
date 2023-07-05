@@ -1,7 +1,7 @@
 import type { QueryObject } from 'ufo'
-import { storyClassMaps } from '../../composables/story'
-import type { StoryClass } from '../../types'
 import { fetchStory } from '../utils'
+import { storyClassMaps } from '~/composables/story'
+import type { StoryClass } from '~/types'
 
 const cachedFetchStoriesID = cachedFunction(fetchStoriesID, {
   maxAge: useAppConfig().apiCacheMaxAge,
