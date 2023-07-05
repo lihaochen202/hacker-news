@@ -32,7 +32,7 @@ function normalizeQuery(query: QueryObject) {
 
 function toNumber(val: any) {
   const _val = +val
-  return isNaN(_val) ? 0 : _val
+  return Number.isNaN(_val) ? 0 : _val
 }
 
 function fetchStoriesID(story: StoryClass) {

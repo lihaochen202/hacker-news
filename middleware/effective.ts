@@ -5,6 +5,6 @@ export default defineNuxtRouteMiddleware((to) => {
 
   const numericalKey = story ? 'page' : 'id'
   const numericalValue = +to.params[numericalKey]
-  if (isNaN(numericalValue) || numericalValue < 1)
+  if (Number.isNaN(numericalValue) || numericalValue < 1)
     return navigateTo('/404', { redirectCode: 301 })
 })
