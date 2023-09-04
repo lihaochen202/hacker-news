@@ -1,11 +1,5 @@
-# Nuxt 3 Refined Starter
+# Hacker News
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple fork of [hacker news build with nuxt](https://github.com/nuxt/hackernews).
 
-## How to use?
-
-```bash
-pnpm dlx degit lihaochen202/nuxtea nuxt3-app
-cd nuxt3-app
-pnpm i
-```
+*By the way, this project uses the [nuxtea](https://github.com/lihaochen202/nuxtea) template.*
